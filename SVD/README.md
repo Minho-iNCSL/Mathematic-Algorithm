@@ -40,4 +40,26 @@ $$
 
 ---
 
-For $X\mathbf{p} = 0$, and $\mathbf{p}$ is a solution, Our goal is to find the $\mathbf{p}$ that minimizes 
+* For $X\mathbf{p} = 0$, and $\mathbf{p}$ is a solution, Our goal is to find the $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$. 
+
+  * Let $X$ be factorized into $UDV^T$ by SVD.
+  * $\parallel X\mathbf{p}\parallel = \parallel UDV^T\mathbf{p}\parallel = \parallel DV^T\mathbf{p}\parallel$ <br>
+  (Because, $U$ is an orthogonal(직교) Matrix, it does not change the norm) <br>
+  * $\parallel V^T\mathbf{p}\parallel = \parallel \mathbf{p}\parallel$ <br>
+  (Because, $V$ is also an orthogonal matrix.)<br>
+  * Let $V^T\mathbf{p} = \mathbf{K}$.
+  
+* If we let $V^T\mathbf{p} = \mathbf{K}$, then $\parallel X\mathbf{p}\parallel = \parallel D\mathbf{K}\parallel$ and $\parallel \mathbf{p}\parallel = \parallel \mathbf{K}\parallel$.
+* Our goal can be changed like... **find $\mathbf{K}$ that minimizes $\parallel D\mathbf{K}\parallel$ subject to $\parallel \mathbf{K}\parallel = 1$**.
+
+---
+
+* Because our goal is to find $\mathbf{K}$ that minimizes $\parallel D\mathbf{K}\parallel$ subject to $\parallel \mathbf{K}\parallel = 1$.
+  * $D$ is a diagonal matrix with its diagonal entries in descending order (내림차순).
+  * It follows that the solution to this problem is $\mathbf{K} = [0, 0, ..., 1]^T$.
+  * $\mathbf{K} = V^T\mathbf{p} \Rightarrow \mathbf{p} = V\mathbf{K}$ (Because $V^{-1} = V^T$ when $V$ is an normal + orthogonal matrix)
+  * Because $\mathbf{p} = V\mathbf{K}$ and $\mathbf{K} = [0, 0, ..., 1]^T$, $\mathbf{p}$ is simply the last column of $V$.
+  
+* In Conclusion..
+  * Objective(목적) : Given a matrix $X$ with at least as many rows as columns, find $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$. 
+  * Solution(방안, 해) : $\mathbf{p}$ is the last column of $V$, where $UDV^T$ is the SVD of $X$.
