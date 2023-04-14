@@ -77,6 +77,8 @@ $$\mathbf{p} = (X^TX)^{-1}$X^T\mathbf{y}$$
 
   $\qquad$ ![image](https://user-images.githubusercontent.com/60316325/231953890-51d063d2-0e9b-47df-af4c-8f16b5256eb7.png) <br>
 
+---
 
+![image](https://user-images.githubusercontent.com/60316325/231957376-823bee53-3d65-4164-bcc9-11ae18622b6f.png)
 
 
