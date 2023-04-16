@@ -65,8 +65,9 @@ $$
   * $\mathbf{K} = V^T\mathbf{p} \Rightarrow \mathbf{p} = V\mathbf{K}$ (Because $V^{-1} = V^T$ when $V$ is an orthogonal matrix)
   * Because $\mathbf{p} = V\mathbf{K}$ and $\mathbf{K} = [0, 0, ..., 1]^T$, $\mathbf{p}$ is simply the last column of $V$.
   
-  **즉, $Ax = 0$의 형태일 경우, $x$는 $V$벡터의 가장 우측 열벡터가 해가 된다. (A의 최소 특이값에 대응하는 right singular verctor)**
-  
+    * 즉, $Ax = 0$의 형태일 때, 
+    * 특이값이 모두 양수인 경우, 최소 특이값에 해당하는 근사 해, 즉 $x$는 $V$벡터의 가장 우측 열벡터가 해가 된다. <br>(A의 최소 특이값에 대응하는 right singular verctor)
+    * 원래는 특이값들 중 0 이 존재하면, 그 특이값에 해당하는 $V$의 열벡터가 모두 해가 된다.
   
 * In Conclusion..
   * Objective(목적) : Given a matrix $X$ with at least as many rows as columns, find $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$. 
