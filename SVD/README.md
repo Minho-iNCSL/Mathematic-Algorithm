@@ -72,3 +72,8 @@ $$
 * In Conclusion..
   * Objective(목적) : Given a matrix $X$ with at least as many rows as columns, find $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$. 
   * Solution(방안, 해) : $\mathbf{p}$ is the last column of $V$, where $UDV^T$ is the SVD of $X$.
+  
+---
+  
+![image](https://user-images.githubusercontent.com/60316325/232276716-c9410880-ef28-46f3-afa1-9e91977b1423.png)
+
