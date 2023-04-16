@@ -17,9 +17,9 @@
   2) Compute a putative model from sample set. <br>
   (선택한 무작위 데이터를 통해, 모델을 추정한다.)
   3) Compute the set of inliers to this model using the whole data set. <br>
-  (추정한 모델을 사용하여, 전체 데이터 중 몇개가 inlier에 속하는지 계산한다.)
+  (추정한 모델을 사용하여, 전체 데이터 중 몇개가 inlier에 속하는지 계산한다.) <br>
   
-  * Repeat 1\~3, and select the model supported by the largest number of inliers <br>
-  * Optional : Calculate the final solution by applying the least squares method to all inliers. <br>
+  \- Repeat 1\~3, and select the model supported by the largest number of inliers <br>
+  \- Optional : Calculate the final solution by applying the least squares method to all inliers. <br>
   (위의 1\~3 과정을 반복하여 가장 많은 inlier를 가지는 모델을 선택한다. 여기에 선택적으로 inlier들에 대해 LSE를 적용시켜도 된다.)
   
