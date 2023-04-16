@@ -3,7 +3,7 @@ clc; close all; clear;
 % Noise level
 scale = 2.0;
 
-% Line Parameters (y=ax+by+c)
+% Line Parameters (ax+by+c=0)
 a = 0.5; b = -1; c = -5;
 
 % Points on the line
