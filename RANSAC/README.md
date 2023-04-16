@@ -23,3 +23,40 @@
   \- Optional : Calculate the final solution by applying the least squares method to all inliers. <br>
   (위의 1\~3 과정을 반복하여 가장 많은 inlier를 가지는 모델을 선택한다. 여기에 선택적으로 inlier들에 대해 LSE를 적용시켜도 된다.)
   
+![image](https://user-images.githubusercontent.com/60316325/232279077-a6fd69de-47ca-4d36-bb16-f0f9f4ac36e0.png)
+
+---
+
+### RANSAN Parmaters
+
+1. **Inlier Threshold** <br>
+  \- Related to the amount of noise we expect in inliers ( $\delta$ in image )
+    * Often model noise as Gaussian with a standard deviation of $\sigma$.
+    * Set the inlier threshold to $k\sigma$.
+2. **Number of rounds (iteration)** <br>
+  \- Related to the percentage of outliers we expect, and the probability of success we'd like to guarantee
+    * Suppose there are 20% outliers and we want to find the correct answer with 99.9% probability...
+    * How many rounds (N) do we need ??
+    * Choose the number of rounds($N$) with the probability($p$) so that at least one random sample is free from ouliers.<br>
+    
+    $$(1-(1-e)^s)^N = 1-p $$ 
+    
+    * 쉽게 $p$는 RANSAC의 성공확률이며, $e$는 전체 데이터에서 outlier의 비율을 나타낸다.
+    * The proportion(비율) of ouliers is $e$, and the number of samples is $s$.
+    * $(1-e)$ : Probability that a sample is an inlier. (선택한 샘플이 inlier일 확률)<br>
+      $(1-e)^s$ : Probability that a $s$ samples are all inlier. ($s$개의 샘플이 모두 inlier일 확률)<br>
+      $(1-(1-e)^s)$ : Probability that $s$ samples includes outliers. ($s$개의 샘플이 outliers를 포함할 확률)<br>
+      $(1-(1-e)^s)^N$ : Probability that $s$ samples includes outliers during all $N$ rounds. <br>
+      $\qquad \qquad \qquad \quad$ (모든 $N$번의 반복에서 $s$개의 샘플이 outliers를 포함할 확률) <br>
+      
+    $$N = {log(1-p) \over log(1-(1-e)^s)}$$
+    
+---
+
+### Problem..
+
+1. Each Iteration the RANSAC result can be different.
+2. Mathematical probability is probability, and no solution can be found no matter how much $N$ is increased.
+3. If Outliers are not randomly distributed, something like structure, RANSAC result maybe approximation of outlier's distribution
+4. The method of estimating a model with only a few samples can make a big problem depending on the situation. <br>
+(포물선의 경우 3개의 점으로 결정 가능하지만, 추정하는 과정에서 포물선의 한쪽 면에서 뽑힌 인접한 3개의 점을 사용하게 된다면?...) 
