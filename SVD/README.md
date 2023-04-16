@@ -10,7 +10,11 @@
         \- $U$ is an $m\times m$ orthogonal(직교) matrix.<br>
         \- $D$ is an $m\times n$ matrix. (non-diagonal terms are all zeros, 대각성분 빼고는 다 0.)<br>
         \- $V$ is an $n\times n$ orthogonal matrix.<br>
-    * The fact that U has orthogonal columns means that $U^TU = I_{m\times m}$.
+    * The fact that U has orthogonal columns means that $U^TU = I_{m\times m}$. 
+    * $U$는, $AA^T$를 고유값분해하여 얻어진 직교행렬로, $U$의 열벡터를 $A$의 Left Singular Vector 라고 부른다. 
+    * $V$는, $A^TA$를 고유값분해하여 얻어진 직교행렬로, $V$의 열벡터를 $A$의 Right Singular Vector 라고 부른다. 
+    * $D$는 U와 V를 고유값분해하여 나오는 고유값(eigenvalue)들의 Square root를 대각원소로 하는 직사각 대각행렬.
+    * $D$의 대각원소들을 A의 특이값(Singular Value)이라 부른다. (Singular Value $\ge$ 0) <br>
 
 ---
 
@@ -40,7 +44,7 @@ $$
 
 ---
 
-* For $X\mathbf{p} = 0$, and $\mathbf{p}$ is a solution, Our goal is to find the $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$. 
+* For $X\mathbf{p} = 0$, and $\mathbf{p}$ is a solution, Our goal is to find the $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$.
 
   * Let $X$ be factorized into $UDV^T$ by SVD.
   * $\parallel X\mathbf{p}\parallel = \parallel UDV^T\mathbf{p}\parallel = \parallel DV^T\mathbf{p}\parallel$ <br>
@@ -55,10 +59,14 @@ $$
 ---
 
 * Because our goal is to find $\mathbf{K}$ that minimizes $\parallel D\mathbf{K}\parallel$ subject to $\parallel \mathbf{K}\parallel = 1$.
-  * $D$ is a diagonal matrix with its diagonal entries in descending order (내림차순).
+  * $D$ is a diagonal matrix with its diagonal entries in descending order (내림차순). <br>
+  ($D$ 행렬은 대각선상에 위치한 원소들은 X의 특이값들로 이루어져있다.)
   * It follows that the solution to this problem is $\mathbf{K} = [0, 0, ..., 1]^T$.
-  * $\mathbf{K} = V^T\mathbf{p} \Rightarrow \mathbf{p} = V\mathbf{K}$ (Because $V^{-1} = V^T$ when $V$ is an normal + orthogonal matrix)
+  * $\mathbf{K} = V^T\mathbf{p} \Rightarrow \mathbf{p} = V\mathbf{K}$ (Because $V^{-1} = V^T$ when $V$ is an orthogonal matrix)
   * Because $\mathbf{p} = V\mathbf{K}$ and $\mathbf{K} = [0, 0, ..., 1]^T$, $\mathbf{p}$ is simply the last column of $V$.
+  
+  **즉, $Ax = 0$의 형태일 경우, $x$는 $V$벡터의 가장 우측 열벡터가 해가 된다. (A의 최소 특이값에 대응하는 right singular verctor)**
+  
   
 * In Conclusion..
   * Objective(목적) : Given a matrix $X$ with at least as many rows as columns, find $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$. 
