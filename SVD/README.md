@@ -73,6 +73,10 @@ $$
   * Objective(목적) : Given a matrix $X$ with at least as many rows as columns, find $\mathbf{p}$ that minimizes $\parallel X\mathbf{p}\parallel$ subject to $\parallel \mathbf{p}\parallel = 1$. 
   * Solution(방안, 해) : $\mathbf{p}$ is the last column of $V$, where $UDV^T$ is the SVD of $X$.
   
+  * Difference with SVD and PseudoInverse <br>
+  \- **PseudoInverse** : Provides Least squares solution with respect to Output Variable. (y에 대한 오차를 최소화 하는 해를 제공) <br>
+  \- **SVD** : Provides a Least squares solution with respecto to Algebraic error. (입력($A$)과 파라미터($x$) 간의 오차를 최소화 하는 해를 제공)
+
 ---
   
 ![image](https://user-images.githubusercontent.com/60316325/232276716-c9410880-ef28-46f3-afa1-9e91977b1423.png)
