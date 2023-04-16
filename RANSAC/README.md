@@ -50,16 +50,6 @@
       $\qquad \qquad \qquad \quad$ (모든 $N$번의 반복에서 $s$개의 샘플이 outliers를 포함할 확률) <br>
       
     $$N = {log(1-p) \over log(1-(1-e)^s)}$$
-    
----
-
-### Problem..
-
-1. Each Iteration the RANSAC result can be different.
-2. Mathematical probability is probability, and no solution can be found no matter how much $N$ is increased.
-3. If Outliers are not randomly distributed, something like structure, RANSAC result maybe approximation of outlier's distribution
-4. The method of estimating a model with only a few samples can make a big problem depending on the situation. <br>
-(포물선의 경우 3개의 점으로 결정 가능하지만, 추정하는 과정에서 포물선의 한쪽 면에서 뽑힌 인접한 3개의 점을 사용하게 된다면?...) 
 
 ---
 
@@ -71,3 +61,13 @@
   * Least Median of Squares (LMedS)
   * M-estimator
   * Hough Transform
+
+---
+
+### Problem..
+
+1. Each Iteration the RANSAC result can be different.
+2. Mathematical probability is probability, and no solution can be found no matter how much $N$ is increased.
+3. If Outliers are not randomly distributed, something like structure, RANSAC result maybe approximation of outlier's distribution
+4. The method of estimating a model with only a few samples can make a big problem depending on the situation. <br>
+(포물선의 경우 3개의 점으로 결정 가능하지만, 추정하는 과정에서 포물선의 한쪽 면에서 뽑힌 인접한 3개의 점을 사용하게 된다면?...) 
