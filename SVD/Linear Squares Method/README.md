@@ -65,7 +65,7 @@ $$2X^TX\mathbf{p} = 2X^T\mathbf{y}$$
 
 $$X^TX\mathbf{p} = X^T\mathbf{y}$$
 
-$$\mathbf{p} = (X^TX)^{-1}$X^T\mathbf{y}$$
+$$\mathbf{p} = (X^TX)^{-1}X^T\mathbf{y}$$
 
   * **This is called Least square method**
 
